@@ -1,0 +1,297 @@
+`<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body{
+            margin: 0;padding: 0;
+            /* position: relative; */
+            border: 4px solid blueviolet;
+            background-color:  rgb(170, 95, 240);
+            
+        }
+        header{
+            top: 0;
+            box-sizing: border-box;
+            padding: 10px;
+        height: 100px;
+        width: 100%;
+        background-color: rgb(170, 95, 240);
+        color: white;
+        position: sticky;
+        z-index: 4;
+
+        }
+        
+        #id3{
+            height: 80px;
+            width: 100px;
+            position: fixed;
+
+        }
+        span{
+            margin-top: 25px;
+            display: inline-block;
+            margin-left: 35vw;
+            font-size: 35px;
+            font-weight: 800;
+            font-style: oblique;
+            text-align: center;
+            /* position: fixed; */
+            margin-bottom: 15px;
+            text-align: center;
+            margin-right: 10px;
+        }
+        #id1{
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            align-content: center;
+            justify-content: center;
+
+
+        }
+        .c1{
+            display: flex;
+            width: 98%;
+            height:20vh;
+            margin-left: 0.7%;
+            border: 4px solid rgb(97, 3, 123);
+            background-color: antiquewhite;
+            justify-content: center;
+            align-content: center;
+            gap:35px;
+        }
+        .c5{
+            width: 220px;
+            height: 140px;
+        }
+        .c3{
+            width: 250px;
+            height: 50px;
+            margin: 35px;
+            font-size: 30px;
+            color: blue;
+            border-radius: 15px;
+            border: 2px solid blueviolet;
+        }
+        .c4{
+            font-size: 35px;
+            margin: 35px;
+        }
+        #submit{
+            height: 50px;
+            width: 150px;
+            border-radius: 7px;
+            display: inline;
+            margin-left: 45%;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hello {{name}}, let's take your test!!!</h1>
+        <img id="id3" src="{{ url_for('static', filename='images/i2.png') }}">
+    </header> 
+    
+  
+
+    <form action="{{url_for('display_result')}}" method="post">
+    <div id="id1">
+        <div class="c1">
+            <lable for="Blood Pressure" class="c4">Blood Pressure : </lable>
+            <select name="Blood Pressure" class="c3" value="Blood">
+                <option value="Normal">Normal</option>
+                <option value="High">High</option>
+                
+                <option value="Low">Low</option>
+
+            </select>
+            <img class="c5" src="{{ url_for('static', filename='images/blood.jpg') }}">
+        </div>
+        <div class="c1">
+            <lable for="Blood Pressure" class="c4">Headche: </lable>
+            <select name="headche" class="c3" value="Blood">
+                <option value="No">Yes</option>
+                <option value="High">No</option>
+                
+                <!-- <option value="Low">Low</option> -->
+
+            </select>
+            <img class="c5" src="{{ url_for('static', filename='images/head.jpg') }}">
+        </div>
+        <div class="c1">
+            <lable for="Blood Pressure" class="c4">Dizziness : </lable>
+            <select name="dizziness" class="c3" value="Blood">
+                <option value="Normal">Yes</option>
+                <option value="High">No</option>
+                
+                <!-- <option val?ue="Low">Low</option> -->
+
+            </select>
+            <img class="c5" src="{{ url_for('static', filename='images/dizzi.jpg') }}">
+        </div>
+        <div class="c1">
+            <lable for="Blood Pressure" class="c4">Chest Pain : </lable>
+            <select name="chest Pain" class="c3" value="Blood">
+                <option value="Normal">Yes</option>
+                <option value="High">No</option>
+                
+                <!-- <option value="Low">Low</option> -->
+
+            </select>
+            <img class="c5" src="{{ url_for('static', filename='images/chest.jpg') }}">
+        </div>
+        <div class="c1">
+            <lable for="Blood Pressure" class="c4">Fatigue : </lable>
+            <select name="fatigue" class="c3" value="Blood">
+                <option value="Normal">Yes</option>
+                <option value="High">No</option>
+                
+                <!-- <option value="Low">Low</option> -->
+
+            </select>
+            <img class="c5" src="{{ url_for('static', filename='images/fatigue.jpg') }}">
+        </div>
+        <div class="c1">
+            <lable for="Blood Pressure" class="c4">Frequent Urination : </lable>
+            <select name="Frequent Urination" class="c3" value="Blood">
+                <option value="Normal">Yes</option>
+                <option value="High">NO</option>
+                
+                <!-- <option value="Low">Low</option> -->
+
+            </select>
+            <img class="c5" src="{{ url_for('static', filename='images/uria.jpg') }}">
+        </div>
+        <div class="c1">
+            <lable for="Blood Pressure" class="c4">Excesssive Thirst : </lable>
+            <select name="ExcesssiveThirst" class="c3" value="Blood">
+                <option value="Normal">Yes</option>
+                <option value="High">No/option>
+                
+                <!-- <option value="Low">Low</option> -->
+
+            </select>
+            <img class="c5" src="{{ url_for('static', filename='images/thirst.jpg') }}">
+        </div>
+        <div class="c1">
+            <lable for="Blood Pressure" class="c4">Blurred Vision : </lable>
+            <select name="BlurredVision" class="c3" value="Blood">
+                <option value="Normal">Yes</option>
+                <option value="High">NO</option>
+                
+                <option value="Low">Low</option>
+
+            </select>
+            <img class="c5" src="{{ url_for('static', filename='images/blurred.jpg') }}">
+        </div>
+        <div class="c1">
+            <lable for="Blood Pressure" class="c4">Sudden WeightLoss : </lable>
+            <select name="SuddenWeight" class="c3" value="Blood">
+                <option value="Normal">Yes</option>
+                <option value="High">NO</option>
+                
+                <!-- <option value="Low">Low</option> -->
+
+            </select>
+            <img class="c5" src="{{ url_for('static', filename='images/weight.jpg') }}">
+        </div>
+        <div class="c1">
+            <lable for="Blood Pressure" class="c4">Diabetes : </lable>
+            <select name="Blood Pressure" class="c3" value="Blood">
+                <option value="Normal">Normal</option>
+                <option value="High">High</option>
+                
+                <option value="Low">Low</option>
+
+            </select>
+            <img class="c5" src="{{ url_for('static', filename='images/diabetes.jpg') }}">
+        </div>
+        <div class="c1">
+            <lable for="Blood Pressure" class="c4">SoreThroat: </lable>
+            <select name="Blood Pressure" class="c3" value="Blood">
+                <option value="Normal">Normal</option>
+                <option value="High">High</option>
+                
+                <option value="Low">Low</option>
+
+            </select>
+            <img class="c5" src="{{ url_for('static', filename='images/sore.jpg') }}">
+        </div>
+        <div class="c1">
+            <lable for="Blood Pressure" class="c4">BodyAches : </lable>
+            <select name="Blood Pressure" class="c3" value="Blood">
+                <option value="Normal">Yes</option>
+                <option value="High">No</option>
+                
+                <!-- <option value="Low">Low</option> -->
+
+            </select>
+            <img class="c5" src="{{ url_for('static', filename='images/body.jpg') }}">
+        </div>
+        <div class="c1">
+            <lable for="Blood Pressure" class="c4">Shortness Of Breath : </lable>
+            <select name="Blood Pressure" class="c3" value="Blood">
+                <option value="Normal">Normal</option>
+                <option value="High">High</option>
+                
+                <option value="Low">Low</option>
+
+            </select>
+            <img class="c5" src="{{ url_for('static', filename='images/breadth.jpg') }}">
+        </div>
+        <div class="c1">
+            <lable for="Blood Pressure" class="c4">Sneezing: </lable>
+            <select name="Blood Pressure" class="c3" value="Blood">
+                <option value="Normal">Normal</option>
+                <option value="High">High</option>
+                
+                <option value="Low">Low</option>
+
+            </select>
+            <img class="c5" src="{{ url_for('static', filename='images/sneez.jpg') }}">
+        </div>
+        <div class="c1">
+            <lable for="Blood Pressure" class="c4">ItchyEyes : </lable>
+            <select name="Blood Pressure" class="c3" value="Blood">
+                <option value="Normal">Yes</option>
+                <option value="High">NO</option>
+                
+                <!-- <option value="Low">Low</option> -->
+
+            </select>
+            <img class="c5" src="{{ url_for('static', filename='images/itchy.jpg') }}">
+        </div>
+        <div class="c1">
+            <lable for="Blood Pressure" class="c4">Runny Nose : </lable>
+            <select name="Blood Pressure" class="c3" value="Blood">
+                <option value="Normal">Yes</option>
+                <option value="High">NO</option>
+                
+                <!-- <option value="Low">Low</option> -->
+
+            </select>
+            <img class="c5" src="{{ url_for('static', filename='images/runnynose.jpg') }}">
+        </div>
+        <div class="c1"><lable for="Blood Pressure" class="c4">Rash : </lable>
+            <select name="Blood Pressure" class="c3" value="Blood">
+                <option value="Normal">No</option>
+                <option value="High">Yes</option>
+                
+                <!-- <option value="Low">Low</option> -->
+
+            </select>
+            <img class="c5" src="{{ url_for('static', filename='images/rash.jpg') }}"></div>
+        <!-- <div class="c1"></div>
+        <div class="c1"></div>
+        <div class="c1"></div> -->
+            <input type="submit" value="Submit" id="submit">
+        </form>
+    </div>
+    
+</body>
+</html>

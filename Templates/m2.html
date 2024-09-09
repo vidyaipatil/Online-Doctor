@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheet/style.css') }}"> -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            box-sizing: border-box;
+            padding: 10px;
+            height: 100px;
+            width: 100%;
+            background-color: rgb(170, 95, 240);
+            color: white;
+
+        }
+
+        img {
+            height: 80px;
+            width: 100px;
+            position: fixed;
+
+        }
+
+        span {
+            margin-top: 25px;
+            display: inline-block;
+            margin-left: 35vw;
+            font-size: 35px;
+            font-weight: 800;
+            font-style: oblique;
+            text-align: center;
+            /* position: fixed; */
+            margin-bottom: 15px;
+            text-align: center;
+            margin-right: 10px;
+        }
+
+        #id1 {
+            height: 80vh;
+            width: 80%;
+            border: 3px solid blueviolet;
+            border-radius: 10px;
+            margin-left: 10vw;
+            margin-top: 20px;
+
+        }
+
+        .c1 {
+            height: 7vh;
+            width: 30vw;
+            margin: 10px;
+            border: 2px solid blueviolet;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .id2 {
+            height: 7vh;
+            width: 15vw;
+            margin: 10px;
+            border: 2px solid blueviolet;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .id3 {
+            height: 7vh;
+            width: 45vw;
+            margin: 10px;
+            border: 2px solid blueviolet;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: blueviolet;
+        }
+
+        #id4 {
+            height: 7vh;
+            width: 25vw;
+            border-radius: 10px;
+            background-color: blueviolet;
+            color: white;
+            font-size: 20px;
+        }
+
+        #img {
+            height: 100px;
+            width: 100px;
+        }
+
+        #id10 {
+            display: flex;
+            gap: 10px;
+            height: 7vh;
+            width: 60vw;
+            margin: 10px;
+            border: 2px solid blueviolet;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            align-content: center;
+            justify-content: center;
+            /* text-align: center; */
+            margin-left: 9vw;
+            font-size: 15px;
+            color: rgb(95, 94, 94);
+        }
+
+        .c2 {
+            text-align: center;
+        }
+
+        .c3 {
+            color: blueviolet;
+        }
+
+        .c5 {
+            height: 7vh;
+            width: 35vw;
+            margin: 10px;
+            border: 2px solid blueviolet;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            text-align: left;
+            /* text-align: left; */
+        }
+
+        .c6 {
+            height: 7vh;
+            width: 25vw;
+            margin: 10px;
+            border: 2px solid blueviolet;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <header>
+        <span>Online Doctor</span>
+        <img src="{{ url_for('static', filename='images/i2.png') }}">
+    </header>
+    <main>
+
+        <form id="id1" align="center" action="{{ url_for('loginpage') }}" method="post">
+            <h1>Registration</h1>
+            <input type="text" class="c1" placeholder="Name">
+            <input type="text" class="c1" placeholder="Mobile no.">
+            <input type="text" class="c1" placeholder="City">
+            <input type="password" class="c1" placeholder="Password">
+            <input type="text" class="id2" placeholder="Date of Birth" onfocus="(this.type='date')">
+            <input type="text" class="id3" placeholder="Address">
+            <input type="mail" class="c5" placeholder="Email">
+            <input type="number" class="c6" placeholder="Adhar Number">
+            <div id="id10">
+                <div class="c2">Gender = male:<input type="radio" class="c3" style="margin: 10px;"></div>
+                <div class="c2">Female<input type="radio" class="c3" style="margin: 10px;"></div>
+                <div class="c2">Neutral<input type="radio" class="c3" style="margin: 10px;"></div>
+            </div>
+            <input type="submit" id="id4" value="Register">
+        </form>
+    </main>
+</body>
+<script>
+    var submit = document.querySelector('#id4');
+submit.addEventListener("click", function(event) {
+    // event.preventDefault();
+    alert("Your data has been submitted successfully!!!");
+});
+
+
+    // var submit = document.querySelector('button');
+    // submit.addEventListener("click", function (event) {
+    //     event.preventDefault();
+    //     document.getElementById('message').innerText = "Your data has been submitted successfully!!!";
+    // });
+
+</script>
+
+</html>

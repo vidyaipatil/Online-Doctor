@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheet/styles.css') }}"> -->
+    <style>
+        body{
+           margin: 0;padding: 0;
+           /* position: relative; */
+           border: 4px solid blueviolet;
+           background-color:  rgb(170, 95, 240);
+           
+       }
+       header{
+           top: 0;
+           box-sizing: border-box;
+           padding: 10px;
+       height: 100px;
+       width: 100%;
+       background-color: rgb(170, 95, 240);
+       color: white;
+       position: sticky;
+       z-index: 4;
+
+       }
+       
+       #id3{
+           height: 80px;
+           width: 100px;
+           position: fixed;
+
+       }
+       span{
+           margin-top: 25px;
+           display: inline-block;
+           margin-left: 35vw;
+           font-size: 35px;
+           font-weight: 800;
+           font-style: oblique;
+           text-align: center;
+           /* position: fixed; */
+           margin-bottom: 15px;
+           text-align: center;
+           margin-right: 10px;
+       }
+       #id1{
+           display: flex;
+           flex-direction: column;
+           row-gap: 10px;
+           align-content: center;
+           justify-content: center;
+
+
+       }
+       .c1{
+           display: flex;
+           width: 98%;
+           height:20vh;
+           margin-left: 0.7%;
+           border: 4px solid rgb(97, 3, 123);
+           background-color: antiquewhite;
+           justify-content: center;
+           align-content: center;
+           gap:35px;
+       }
+       .c5{
+           width: 220px;
+           height: 140px;
+       }
+       .c3{
+           width: 250px;
+           height: 50px;
+           margin: 35px;
+           font-size: 30px;
+           color: blue;
+           border-radius: 15px;
+           border: 2px solid blueviolet;
+       }
+       .c4{
+           font-size: 35px;
+           margin: 35px;
+       }
+       #submit{
+           height: 50px;
+           width: 150px;
+           border-radius: 7px;
+           display: inline;
+           margin-left: 45%;
+       }
+       
+   </style>
+</head>
+<body>
+    <header>
+        <h1>Hello {{name}}, let's take your test!!!</h1>
+        <img id="id3" src="{{ url_for('static', filename='images/i2.png') }}">
+    </header> 
+
+    <form action="{{url_for('display_result')}}" method="post">
+        
+        <div id="id1">
+            <div class="c1">
+                <label for="bloodpressure" class="c4">Blood Pressure : </label>
+                <select name="bloodpressure" class="c3" value="Blood">
+                    <option value="normal">Normal</option>
+                    <option value="high">High</option>
+                    <option value="low">Low</option>
+                </select>
+                <img class="c5" src="{{ url_for('static', filename='images/blood.jpg') }}">
+            </div>
+            
+            <div class="c1">
+                <label for="headache" class="c4">Headache : </label>
+                <select name="headache" class="c3">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+                <img class="c5" src="{{ url_for('static', filename='images/head.jpg') }}">
+            </div>
+            <div class="c1">
+                <label for="cough" class="c4">Cough : </label>
+                <select name="cough" class="c3">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+                <img class="c5" src="{{ url_for('static', filename='images/cough.jpeg') }}">
+            </div>
+            <div class="c1">
+                <label for="fever" class="c4">Fever : </label>
+                <select name="fever" class="c3">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+                <img class="c5" src="{{ url_for('static', filename='images/fever.jpeg') }}">
+            </div>
+            <div class="c1">
+                <label for="dizziness" class="c4">Dizziness : </label>
+                <select name="dizziness" class="c3">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+                <img class="c5" src="{{ url_for('static', filename='images/dizzi.jpg') }}">
+            </div>
+            <div class="c1">
+                <label for="chestpain" class="c4">Chest Pain : </label>
+                <select name="chestpain" class="c3">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+                <img class="c5" src="{{ url_for('static', filename='images/chest.jpg') }}">
+            </div>
+            <div class="c1">
+                <label for="fatigue" class="c4">Fatigue : </label>
+                <select name="fatigue" class="c3">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+                <img class="c5" src="{{ url_for('static', filename='images/fatigue.jpg') }}">
+            </div>
+            <div class="c1">
+                <label for="frequenturination" class="c4">Frequent Urination : </label>
+                <select name="frequenturination" class="c3">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+                <img class="c5" src="{{ url_for('static', filename='images/uria.jpg') }}">
+            </div>
+            <div class="c1">
+                <label for="excessivethirst" class="c4">Excessive Thirst : </label>
+                <select name="excessivethirst" class="c3">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+                <img class="c5" src="{{ url_for('static', filename='images/thirst.jpg') }}">
+            </div>
+            <div class="c1">
+                <label for="blurredVision" class="c4">Blurred Vision : </label>
+                <select name="blurredvision" class="c3">
+                    <option value="no">No</option>
+                    <option value="high">High</option>
+                    <option value="normal">Normal</option>
+                    <option value="low">Low</option>
+                </select>
+                <img class="c5" src="{{ url_for('static', filename='images/blurred.jpg') }}">
+            </div>
+            <div class="c1">
+                <label for="suddenweightloss" class="c4">Sudden Weight Loss : </label>
+                <select name="suddenweightloss" class="c3">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+                <img class="c5" src="{{ url_for('static', filename='images/weight.jpg') }}">
+            </div>
+            <div class="c1">
+                <label for="sorethroat" class="c4">Sore Throat : </label>
+                <select name="sorethroat" class="c3">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+                <img class="c5" src="{{ url_for('static', filename='images/sore.jpg') }}">
+            </div>
+            <div class="c1">
+                <label for="bodyaches" class="c4">Body Aches : </label>
+                <select name="bodyaches" class="c3">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+                <img class="c5" src="{{ url_for('static', filename='images/body.jpg') }}">
+            </div>
+            <div class="c1">
+                <label for="shortnessofbreadth" class="c4">Shortness of Breath : </label>
+                <select name="shortnessofbreadth" class="c3">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+                <img class="c5" src="{{ url_for('static', filename='images/breath.jpg') }}">
+            </div>
+            <div class="c1">
+                <label for="sneezing" class="c4">Sneezing : </label>
+                <select name="sneezing" class="c3">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+                <img class="c5" src="{{ url_for('static', filename='images/sneez.jpg') }}">
+            </div>
+            <div class="c1">
+                <label for="itchyeyes" class="c4">Itchy Eyes : </label>
+                <select name="itchyeyes" class="c3">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+                <img class="c5" src="{{ url_for('static', filename='images/itchy.jpg') }}">
+            </div>
+            <div class="c1">
+                <label for="runnynose" class="c4">Runny Nose : </label>
+                <select name="runnynose" class="c3">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+                <img class="c5" src="{{ url_for('static', filename='images/ruunyNose.jpg') }}">
+            </div>
+            <div class="c1">
+                <label for="rash" class="c4">Rash : </label>
+                <select name="rash" class="c3">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+                <img class="c5" src="{{ url_for('static', filename='images/rash.jpg') }}">
+            </div>
+            <input type="submit" value="Submit" id="submit">
+        </div>
+        
+        
+        </div>
+        
+    </form>
+</body>
+</html>
